@@ -13,6 +13,8 @@
     <link rel="stylesheet" href="assets/style/style.css" />
     <link rel="stylesheet" href="assets/fontawesome/css/all.min.css" />
 
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
     <script src="assets/js/script.js" defer></script>
   </head>
   <body>
@@ -63,7 +65,7 @@
 
     <!-- About -->
     <section id="about">
-      <div class="px-4 pt-5 my-5 text-center">
+      <div data-aos="fade-up" class="px-4 pt-5 my-5 text-center">
         <h1 class="display-4 fw-bold text-body-emphasis mb-3">Tentang Saya</h1>
         <div class="col-lg-6 mx-auto">
           <p class="lead mb-4">
@@ -88,11 +90,11 @@
     <!-- Experience -->
     <section id="experience">
       <div class="container px-4 py-5">
-        <h2 class="pb-2">Pengalaman</h2>
+        <h2 data-aos="fade-right" class="pb-2">Pengalaman</h2>
         <div
           class="row justify-content-center g-1 py-3 row-cols-1 row-cols-lg-1 text-center"
         >
-          <div class="feature col">
+          <div data-aos="zoom-in" class="feature col">
             <div class="align-items-center justify-content-center fs-2 mb-3">
               <img
                 src="img/logo-airnav.png"
@@ -123,12 +125,12 @@
     <!-- Skill -->
     <section id="skill">
       <div class="container px-4 py-5" id="icon-grid">
-        <h2 class="pb-2 text-center">Kemampuan</h2>
+        <h2 data-aos="zoom-in" class="pb-2 text-center">Kemampuan</h2>
 
         <div
           class="row justify-content-center row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4 py-5"
         >
-          <div class="col d-flex align-items-start">
+          <div data-aos="zoom-in-right" class="col d-flex align-items-start">
             <i
               class="fa-brands fa-html5 fa-3x text-body-secondary flex-shrink-0 me-3"
             ></i>
@@ -136,7 +138,7 @@
               <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">HTML 5</h3>
             </div>
           </div>
-          <div class="col d-flex align-items-start">
+          <div data-aos="zoom-in" class="col d-flex align-items-start">
             <i
               class="fa-brands fa-css3 fa-3x text-body-secondary flex-shrink-0 me-3"
             ></i>
@@ -144,7 +146,7 @@
               <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">CSS 3</h3>
             </div>
           </div>
-          <div class="col d-flex align-items-start">
+          <div data-aos="zoom-in-left" class="col d-flex align-items-start">
             <i
               class="fa-brands fa-microsoft fa-3x text-body-secondary flex-shrink-0 me-3"
             ></i>
@@ -304,6 +306,11 @@
         borderRadius: ["0%", "50%"],
         easing: "easeInOutQuad",
       });
+    </script>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init();
     </script>
   </body>
 </html>
