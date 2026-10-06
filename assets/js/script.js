@@ -13,13 +13,25 @@ if (M) root.classList.add("motion");
 $("[data-year]").textContent = new Date().getFullYear();
 
 /* Masa kerja dihitung dari bulan mulai (bulan berjalan ikut dihitung) */
+const tenure = (y, m) => [y && `${y} tahun`, m && `${m} bulan`].filter(Boolean).join(" ");
+
 $$("[data-since]").forEach((el) => {
   const [y, m] = el.dataset.since.split("-").map(Number);
   const now = new Date();
   const months = (now.getFullYear() - y) * 12 + now.getMonth() + 2 - m;
   const years = Math.floor(months / 12);
   const rest = months % 12;
-  el.textContent = [years && `${years} tahun`, rest && `${rest} bulan`].filter(Boolean).join(" ");
+  el.textContent = tenure(years, rest);
+
+  if (!run || !("tick" in el.dataset)) return;
+  M.inView(el, () => {
+    M.animate(0, 1, {
+      duration: 1.2,
+      ease,
+      onUpdate: (p) => (el.textContent = tenure(Math.round(years * p), Math.round(rest * p)) || "0 bulan"),
+      onComplete: () => (el.textContent = tenure(years, rest)),
+    });
+  });
 });
 
 /* Tema */
@@ -44,37 +56,51 @@ if (M) {
   M.scroll((p) => (bar.style.transform = `scaleX(${p})`));
 }
 
-const pill = $(".nav-pill");
-const links = $$(".nav-links a");
-let active = null;
-
-function movePill(link) {
-  if (!link) {
-    pill.style.opacity = 0;
-    return;
+function indicator(pill, links) {
+  let active = null;
+  const move = (link) => {
+    if (!link || !link.offsetWidth) {
+      pill.style.opacity = 0;
+      return;
+    }
+    const visible = pill.style.opacity === "1";
+    pill.style.opacity = 1;
+    if (run && visible) {
+      M.animate(pill, { x: link.offsetLeft, width: `${link.offsetWidth}px` }, spring);
+    } else {
+      pill.style.transform = `translateX(${link.offsetLeft}px)`;
+      pill.style.width = `${link.offsetWidth}px`;
+    }
+  };
+  if (fine) {
+    links.forEach((a) => {
+      a.addEventListener("pointerenter", () => move(a));
+      a.addEventListener("pointerleave", () => move(active));
+    });
   }
-  const visible = pill.style.opacity === "1";
-  pill.style.opacity = 1;
-  if (run && visible) {
-    M.animate(pill, { x: link.offsetLeft, width: `${link.offsetWidth}px` }, spring);
-  } else {
-    pill.style.transform = `translateX(${link.offsetLeft}px)`;
-    pill.style.width = `${link.offsetWidth}px`;
-  }
+  return {
+    set(hash) {
+      active = links.find((a) => a.hash === hash) || null;
+      links.forEach((a) => {
+        a.classList.toggle("is-active", a === active);
+        if (a === active) a.setAttribute("aria-current", "location");
+        else a.removeAttribute("aria-current");
+      });
+      move(active);
+    },
+    refresh: () => move(active),
+  };
 }
 
-links.forEach((a) => {
-  a.addEventListener("pointerenter", () => movePill(a));
-  a.addEventListener("pointerleave", () => movePill(active));
-});
+const indicators = [
+  indicator($(".nav-pill"), $$(".nav-links a")),
+  indicator($(".dock-pill"), $$(".dock a")),
+];
 
 const sections = new IntersectionObserver(
   (entries) => {
     for (const e of entries) {
-      if (!e.isIntersecting) continue;
-      active = links.find((a) => a.hash === `#${e.target.id}`) || null;
-      links.forEach((a) => a.classList.toggle("is-active", a === active));
-      movePill(active);
+      if (e.isIntersecting) indicators.forEach((i) => i.set(`#${e.target.id}`));
     }
   },
   { rootMargin: "-45% 0px -50% 0px" }
@@ -91,7 +117,11 @@ name.innerHTML = name.textContent
 
 if (run) {
   name.style.opacity = 1;
-  M.animate($$(".word", name), { opacity: [0, 1], y: [28, 0] }, { duration: 0.8, ease, delay: M.stagger(0.09) });
+  M.animate(
+    $$(".word", name),
+    { opacity: [0, 1], y: [24, 0], filter: ["blur(8px)", "blur(0px)"] },
+    { duration: 0.8, ease, delay: M.stagger(0.09) }
+  );
   M.animate(
     $$(".hero-text .intro:not(.hero-name)"),
     { opacity: [0, 1], y: [14, 0] },
@@ -121,48 +151,69 @@ if (run) {
 }
 
 /* Accordion tugas */
-$$(".duty").forEach((btn, i) => {
+const duties = $$(".duty");
+const expandAll = $(".expand-all");
+
+function syncExpandAll() {
+  const allOpen = duties.every((b) => b.getAttribute("aria-expanded") === "true");
+  expandAll.setAttribute("aria-pressed", String(allOpen));
+  $("span", expandAll).textContent = allOpen ? "Tutup semua tugas" : "Buka semua tugas";
+}
+
+function toggleDuty(btn, open) {
+  const panel = btn.nextElementSibling;
+  if ((btn.getAttribute("aria-expanded") === "true") === open) return;
+  btn.setAttribute("aria-expanded", String(open));
+  panel.anim?.stop();
+
+  if (!run) {
+    panel.hidden = !open;
+    return;
+  }
+  if (open) {
+    panel.hidden = false;
+    panel.anim = M.animate(
+      panel,
+      { height: [0, `${panel.scrollHeight}px`], opacity: [0, 1] },
+      { duration: 0.35, ease }
+    );
+    panel.anim.then(() => (panel.style.height = ""));
+  } else {
+    panel.anim = M.animate(panel, { height: `0px`, opacity: 0 }, { duration: 0.25, ease });
+    panel.anim.then(() => {
+      if (btn.getAttribute("aria-expanded") === "false") panel.hidden = true;
+      panel.style.height = "";
+    });
+  }
+}
+
+duties.forEach((btn, i) => {
   const panel = btn.nextElementSibling;
   panel.id = `duty-${i}`;
   panel.hidden = true;
   btn.setAttribute("aria-controls", panel.id);
-
   btn.addEventListener("click", () => {
-    const open = btn.getAttribute("aria-expanded") !== "true";
-    btn.setAttribute("aria-expanded", String(open));
-    panel.anim?.stop();
-
-    if (!run) {
-      panel.hidden = !open;
-      return;
-    }
-    if (open) {
-      panel.hidden = false;
-      panel.anim = M.animate(
-        panel,
-        { height: [0, `${panel.scrollHeight}px`], opacity: [0, 1] },
-        { duration: 0.35, ease }
-      );
-      panel.anim.then(() => (panel.style.height = ""));
-    } else {
-      panel.anim = M.animate(panel, { height: `0px`, opacity: 0 }, { duration: 0.25, ease });
-      panel.anim.then(() => {
-        if (btn.getAttribute("aria-expanded") === "false") panel.hidden = true;
-        panel.style.height = "";
-      });
-    }
+    toggleDuty(btn, btn.getAttribute("aria-expanded") !== "true");
+    syncExpandAll();
   });
 });
 
-/* Fokus posisi: ringkasan, urutan & sorotan keahlian */
+expandAll.addEventListener("click", () => {
+  const open = expandAll.getAttribute("aria-pressed") !== "true";
+  duties.forEach((btn) => toggleDuty(btn, open));
+  syncExpandAll();
+});
+
+/* Fokus posisi: ringkasan, urutan & label relevansi keahlian */
 const ORDER = {
   pajak: ["tax", "djp", "erp", "office", "code"],
   programmer: ["code", "erp", "office", "tax", "djp"],
 };
+const ROLE = { pajak: "Staf Pajak", programmer: "Junior Programmer" };
 const segmented = $(".segmented");
 const thumb = $(".segmented-thumb");
 const focusBtns = $$("[data-focus-btn]");
-const skillGrid = $(".skills");
+const ledger = $(".ledger");
 let focus = new URLSearchParams(location.search).get("fokus") === "programmer" ? "programmer" : "pajak";
 
 function placeThumb(animated) {
@@ -186,21 +237,19 @@ function setFocus(mode, animated) {
     p.hidden = !show;
   });
 
-  const cards = $$(".skill", skillGrid);
-  const before = new Map(cards.map((c) => [c, c.getBoundingClientRect()]));
-  ORDER[mode].forEach((key) => skillGrid.append($(`[data-key="${key}"]`, skillGrid)));
-  cards.forEach((c) => {
-    const match = c.dataset.for.split(" ").includes(mode);
-    c.classList.toggle("is-match", match);
-    c.classList.toggle("is-muted", !match);
+  const rows = $$(".ledger-row", ledger);
+  const before = new Map(rows.map((r) => [r, r.getBoundingClientRect().top]));
+  ORDER[mode].forEach((key) => ledger.append($(`[data-key="${key}"]`, ledger)));
+  rows.forEach((r) => {
+    const match = r.dataset.for.split(" ").includes(mode);
+    r.classList.toggle("is-match", match);
+    r.classList.toggle("is-muted", !match);
+    $(".fit", r).textContent = match ? `Inti · ${ROLE[mode]}` : "Pendukung";
   });
   if (!animated || !run) return;
-  cards.forEach((c) => {
-    const a = before.get(c);
-    const b = c.getBoundingClientRect();
-    const dx = a.left - b.left;
-    const dy = a.top - b.top;
-    if (dx || dy) M.animate(c, { x: [dx, 0], y: [dy, 0] }, { type: "spring", stiffness: 260, damping: 30 });
+  rows.forEach((r, i) => {
+    const dy = before.get(r) - r.getBoundingClientRect().top;
+    if (dy) M.animate(r, { y: [dy, 0] }, { type: "spring", stiffness: 260, damping: 30, delay: i * 0.03 });
   });
 }
 
@@ -216,14 +265,12 @@ focusBtns.forEach((b) =>
 );
 
 setFocus(focus, false);
-document.fonts?.ready.then(() => {
+const relayout = () => {
   placeThumb(false);
-  movePill(active);
-});
-addEventListener("resize", () => {
-  placeThumb(false);
-  movePill(active);
-});
+  indicators.forEach((i) => i.refresh());
+};
+document.fonts?.ready.then(relayout);
+addEventListener("resize", relayout);
 
 /* Interaksi pointer: spotlight, tilt foto, tombol magnetis */
 if (fine) {
@@ -254,6 +301,14 @@ if (fine && run) {
       M.animate(btn, { x, y }, spring);
     });
     btn.addEventListener("pointerleave", () => M.animate(btn, { x: 0, y: 0 }, spring));
+  });
+}
+
+/* Umpan balik tekan untuk layar sentuh */
+if (run) {
+  M.press(".btn, .dock a, .segmented button", (el) => {
+    M.animate(el, { scale: 0.96 }, { duration: 0.12 });
+    return () => M.animate(el, { scale: 1 }, spring);
   });
 }
 

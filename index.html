@@ -2,11 +2,11 @@
 <html lang="id">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <title>Wahyu Muharik · Staf Pajak & Junior Programmer</title>
     <meta
       name="description"
-      content="Portofolio Wahyu Muharik — Staf Pajak di PT Duta Abadi Primantara dan mahasiswa S1 Teknik Informatika Universitas Raharja (tahap skripsi)."
+      content="Portofolio Wahyu Muharik: Staf Pajak di PT Duta Abadi Primantara dan mahasiswa S1 Teknik Informatika Universitas Raharja (tahap skripsi)."
     />
     <meta name="theme-color" content="#f5f3ee" media="(prefers-color-scheme: light)" />
     <meta name="theme-color" content="#121311" media="(prefers-color-scheme: dark)" />
@@ -108,9 +108,7 @@
             <a class="btn btn-primary magnetic" href="file/CV.pdf" target="_blank" rel="noopener">
               <i class="fa-solid fa-download"></i> Unduh CV
             </a>
-            <a class="btn btn-ghost magnetic" href="#kontak">
-              Hubungi saya <i class="fa-solid fa-arrow-right"></i>
-            </a>
+            <a class="btn btn-ghost magnetic" href="#kontak">Hubungi saya</a>
           </div>
         </div>
 
@@ -140,7 +138,7 @@
           </div>
           <div class="fact reveal">
             <dt>Pengalaman pajak</dt>
-            <dd><span data-since="2024-06">2 tahun 5 bulan</span><small>Sebagai staf · + 8 bulan magang</small></dd>
+            <dd><span data-since="2024-06" data-tick>2 tahun 5 bulan</span><small>Sebagai staf · + 8 bulan magang</small></dd>
           </div>
           <div class="fact reveal">
             <dt>Pendidikan</dt>
@@ -159,6 +157,9 @@
           <p class="section-index">01</p>
           <h2>Pengalaman</h2>
           <p class="section-note">Klik setiap tugas untuk melihat penjelasannya.</p>
+          <button type="button" class="btn btn-ghost btn-sm expand-all" aria-pressed="false">
+            <i class="fa-solid fa-chevron-down" aria-hidden="true"></i> <span>Buka semua tugas</span>
+          </button>
         </header>
 
         <div class="timeline">
@@ -271,12 +272,12 @@
         <header class="section-head reveal">
           <p class="section-index">02</p>
           <h2>Keahlian</h2>
-          <p class="section-note">Kartu yang disorot menyesuaikan pilihan posisi di atas.</p>
+          <p class="section-note">Urutan dan label relevansi mengikuti posisi yang dipilih di atas.</p>
         </header>
 
-        <div class="skills">
-          <article class="skill card spotlight reveal" data-key="tax" data-for="pajak">
-            <i class="fa-solid fa-file-invoice-dollar skill-icon"></i>
+        <ul class="ledger reveal">
+          <li class="ledger-row spotlight" data-key="tax" data-for="pajak">
+            <i class="fa-solid fa-file-invoice-dollar ledger-icon" aria-hidden="true"></i>
             <h3>Perpajakan</h3>
             <ul class="tags">
               <li>Rekonsiliasi PPN Masukan</li>
@@ -285,41 +286,48 @@
               <li>Validasi transaksi ber-PPN</li>
               <li>Filing dokumen pajak</li>
             </ul>
-          </article>
+            <p class="fit"></p>
+          </li>
 
-          <article class="skill card spotlight reveal" data-key="erp" data-for="pajak programmer">
-            <i class="fa-solid fa-server skill-icon"></i>
+          <li class="ledger-row spotlight" data-key="erp" data-for="pajak programmer">
+            <i class="fa-solid fa-server ledger-icon" aria-hidden="true"></i>
             <h3>ERP</h3>
             <ul class="tags"><li>Oracle E-Business Suite</li></ul>
-          </article>
+            <p class="fit"></p>
+          </li>
 
-          <article class="skill card spotlight reveal" data-key="djp" data-for="pajak">
-            <i class="fa-solid fa-building-columns skill-icon"></i>
+          <li class="ledger-row spotlight" data-key="djp" data-for="pajak">
+            <i class="fa-solid fa-building-columns ledger-icon" aria-hidden="true"></i>
             <h3>Aplikasi DJP</h3>
             <ul class="tags"><li>Coretax</li><li>DJP Online</li><li>Aplikasi DJP lainnya</li></ul>
-          </article>
+            <p class="fit"></p>
+          </li>
 
-          <article class="skill card spotlight reveal" data-key="office" data-for="pajak programmer">
-            <i class="fa-brands fa-microsoft skill-icon"></i>
+          <li class="ledger-row spotlight" data-key="office" data-for="pajak programmer">
+            <i class="fa-brands fa-microsoft ledger-icon" aria-hidden="true"></i>
             <h3>Microsoft Office</h3>
             <ul class="tags"><li>Excel</li><li>Word</li><li>PowerPoint</li></ul>
-          </article>
+            <p class="fit"></p>
+          </li>
 
-          <article class="skill card spotlight reveal" data-key="code" data-for="programmer">
-            <i class="fa-solid fa-code skill-icon"></i>
+          <li class="ledger-row spotlight" data-key="code" data-for="programmer">
+            <i class="fa-solid fa-code ledger-icon" aria-hidden="true"></i>
             <h3>Pemrograman <span class="level">Dasar</span></h3>
-            <ul class="tags tags-icon">
-              <li><i class="fa-brands fa-html5"></i> HTML</li>
-              <li><i class="fa-brands fa-css3-alt"></i> CSS</li>
-              <li><i class="fa-brands fa-js"></i> JavaScript</li>
-              <li><i class="fa-brands fa-php"></i> PHP</li>
-            </ul>
-            <p class="skill-note">
-              Kode situs ini tersedia di
-              <a href="https://github.com/wahyumuhariq/wahyumuhariq.github.io" target="_blank" rel="noopener">GitHub</a>.
-            </p>
-          </article>
-        </div>
+            <div class="ledger-detail">
+              <ul class="tags">
+                <li><i class="fa-brands fa-html5" aria-hidden="true"></i> HTML</li>
+                <li><i class="fa-brands fa-css3-alt" aria-hidden="true"></i> CSS</li>
+                <li><i class="fa-brands fa-js" aria-hidden="true"></i> JavaScript</li>
+                <li><i class="fa-brands fa-php" aria-hidden="true"></i> PHP</li>
+              </ul>
+              <p class="skill-note">
+                Kode situs ini tersedia di
+                <a href="https://github.com/wahyumuhariq/wahyumuhariq.github.io" target="_blank" rel="noopener">GitHub</a>.
+              </p>
+            </div>
+            <p class="fit"></p>
+          </li>
+        </ul>
       </section>
 
       <!-- Pendidikan -->
@@ -329,21 +337,23 @@
           <h2>Pendidikan</h2>
         </header>
 
-        <div class="edu">
-          <article class="card spotlight reveal">
-            <i class="fa-solid fa-graduation-cap skill-icon"></i>
+        <ol class="edu">
+          <li class="edu-item reveal">
             <p class="edu-period">Perkiraan lulus 2027</p>
-            <h3>Universitas Raharja</h3>
-            <p>S1 Teknik Informatika</p>
-            <p class="edu-status"><span class="badge badge-live">Tahap skripsi</span></p>
-          </article>
-          <article class="card spotlight reveal">
-            <i class="fa-solid fa-school skill-icon"></i>
+            <div>
+              <h3>Universitas Raharja</h3>
+              <p>S1 Teknik Informatika</p>
+            </div>
+            <p><span class="badge badge-live">Tahap skripsi</span></p>
+          </li>
+          <li class="edu-item reveal">
             <p class="edu-period">2017 – 2020</p>
-            <h3>SMK Negeri 4 Tangerang</h3>
-            <p>Rekayasa Perangkat Lunak</p>
-          </article>
-        </div>
+            <div>
+              <h3>SMK Negeri 4 Tangerang</h3>
+              <p>Rekayasa Perangkat Lunak</p>
+            </div>
+          </li>
+        </ol>
       </section>
 
       <!-- Kontak -->
@@ -386,6 +396,16 @@
       <p>&copy; <span data-year>2026</span> Wahyu Muharik</p>
       <a href="#top" class="to-top"><i class="fa-solid fa-arrow-up"></i> Kembali ke atas</a>
     </footer>
+
+    <nav class="dock" aria-label="Navigasi bagian">
+      <span class="dock-pill" aria-hidden="true"></span>
+      <ul>
+        <li><a href="#pengalaman"><i class="fa-solid fa-briefcase" aria-hidden="true"></i>Pengalaman</a></li>
+        <li><a href="#keahlian"><i class="fa-solid fa-list-check" aria-hidden="true"></i>Keahlian</a></li>
+        <li><a href="#pendidikan"><i class="fa-solid fa-graduation-cap" aria-hidden="true"></i>Pendidikan</a></li>
+        <li><a href="#kontak"><i class="fa-solid fa-envelope" aria-hidden="true"></i>Kontak</a></li>
+      </ul>
+    </nav>
 
     <div class="toast" role="status" aria-live="polite"></div>
   </body>
