@@ -666,11 +666,11 @@ html:not(.js) .focus {
 
 .job-meta {
   display: inline-flex;
+  flex-wrap: wrap;
   align-items: center;
-  gap: 10px;
+  gap: 6px 10px;
   font: 500 0.85rem var(--mono);
   color: var(--muted);
-  white-space: nowrap;
 }
 
 .duties {

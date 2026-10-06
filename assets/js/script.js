@@ -12,6 +12,16 @@ if (M) root.classList.add("motion");
 
 $("[data-year]").textContent = new Date().getFullYear();
 
+/* Masa kerja dihitung dari bulan mulai (bulan berjalan ikut dihitung) */
+$$("[data-since]").forEach((el) => {
+  const [y, m] = el.dataset.since.split("-").map(Number);
+  const now = new Date();
+  const months = (now.getFullYear() - y) * 12 + now.getMonth() + 2 - m;
+  const years = Math.floor(months / 12);
+  const rest = months % 12;
+  el.textContent = [years && `${years} tahun`, rest && `${rest} bulan`].filter(Boolean).join(" ");
+});
+
 /* Tema */
 $(".theme-toggle").addEventListener("click", () => {
   const dark = root.dataset.theme
