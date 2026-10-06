@@ -673,6 +673,10 @@ html:not(.js) .focus {
   color: var(--muted);
 }
 
+.job-meta > span {
+  white-space: nowrap;
+}
+
 .duties {
   margin-top: 18px;
   border-top: 1px solid var(--line);
