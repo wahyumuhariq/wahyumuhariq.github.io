@@ -373,9 +373,19 @@ html:not(.js) .focus {
 }
 
 .summary {
-  margin-top: 20px;
+  margin-top: 24px;
   max-width: 58ch;
   font-size: 1.05rem;
+}
+
+.summary p + p {
+  margin-top: 12px;
+  color: var(--muted);
+}
+
+.pitch {
+  font: 600 clamp(1.25rem, 2.4vw, 1.5rem) / 1.35 var(--serif);
+  letter-spacing: -0.01em;
 }
 
 .hero-actions {
