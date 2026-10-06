@@ -1,353 +1,392 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="id">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Portfolio Wahyu Muharik</title>
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
-      crossorigin="anonymous"
+    <title>Wahyu Muharik · Staf Pajak & Junior Programmer</title>
+    <meta
+      name="description"
+      content="Portofolio Wahyu Muharik — Staf Pajak di PT Duta Abadi Primantara dan mahasiswa S1 Teknik Informatika Universitas Raharja (tahap skripsi)."
     />
+    <meta name="theme-color" content="#f5f3ee" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#121311" media="(prefers-color-scheme: dark)" />
+    <link rel="canonical" href="https://wahyumuhariq.github.io/" />
+    <meta property="og:type" content="profile" />
+    <meta property="og:url" content="https://wahyumuhariq.github.io/" />
+    <meta property="og:title" content="Wahyu Muharik · Staf Pajak & Junior Programmer" />
+    <meta
+      property="og:description"
+      content="Staf Pajak dengan pengalaman 2 tahun + 8 bulan magang. Mahasiswa S1 Teknik Informatika, perkiraan lulus 2027."
+    />
+    <meta property="og:image" content="https://wahyumuhariq.github.io/img/og-image.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231f5f4a'/%3E%3Ctext x='50%25' y='54%25' dominant-baseline='middle' text-anchor='middle' font-family='Georgia,serif' font-size='30' fill='%23fff'%3EWM%3C/text%3E%3C/svg%3E"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/fontawesome/css/fontawesome.min.css" />
+    <link rel="stylesheet" href="assets/fontawesome/css/solid.min.css" />
+    <link rel="stylesheet" href="assets/fontawesome/css/brands.min.css" />
     <link rel="stylesheet" href="assets/style/style.css" />
-    <link rel="stylesheet" href="assets/fontawesome/css/all.min.css" />
 
-    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-
+    <script>
+      document.documentElement.classList.add("js");
+      try {
+        const t = localStorage.getItem("theme");
+        if (t) document.documentElement.dataset.theme = t;
+      } catch (e) {}
+    </script>
+    <script src="assets/js/vendor/motion.js" defer></script>
     <script src="assets/js/script.js" defer></script>
   </head>
   <body>
-    <!-- Heroes -->
-    <section id="hero" class="hero">
-      <main>
-        <div class="container col-xxl-8 px-4 py-4">
-          <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
-            <div class="col-10 col-sm-8 col-lg-6">
-              <img
-                src="img/IMG_20220129_221206_652.jpg"
-                class="poto d-block mx-lg-auto img-fluid"
-                alt="Foto Diri"
-                width="700"
-                height="500"
-                loading="lazy"
-              />
-            </div>
-            <div class="col-lg-6">
-              <h1 class="halo display-5 fw-bold text-body-emphasis lh-1 mb-3">
-                Halo, Saya Wahyu Muharik!
-              </h1>
+    <div class="progress" aria-hidden="true"></div>
 
-              <p class="p lead">
-                <span class="text-wrapper">
-                  <span class="line line1"></span>
-                  <span class="letters">
-                    Seorang mahasiswa dan memiliki ketertarikan di dunia
-                    programming.</span
-                  >
-                </span>
-              </p>
-              <div class="d-grid gap-2 d-md-flex justify-content-md-start mt-3">
-                <a
-                  href="#about"
-                  class="baca btn btn-outline-secondary btn-lg px-4"
-                  onclick="enableScroll()"
-                >
-                  Baca Selengkapnya
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </main>
-    </section>
-    <!-- End Heroes -->
+    <header class="nav">
+      <a href="#top" class="nav-brand">Wahyu Muharik</a>
+      <nav aria-label="Navigasi utama">
+        <ul class="nav-links">
+          <li><a href="#pengalaman">Pengalaman</a></li>
+          <li><a href="#keahlian">Keahlian</a></li>
+          <li><a href="#pendidikan">Pendidikan</a></li>
+          <li><a href="#kontak">Kontak</a></li>
+        </ul>
+        <span class="nav-pill" aria-hidden="true"></span>
+      </nav>
+      <button class="theme-toggle" type="button" aria-label="Ganti tema terang/gelap">
+        <i class="fa-solid fa-moon"></i><i class="fa-solid fa-sun"></i>
+      </button>
+    </header>
 
-    <!-- About -->
-    <section id="about">
-      <div data-aos="fade-up" class="px-4 pt-5 my-5 text-center">
-        <h1 class="display-4 fw-bold text-body-emphasis mb-3">Tentang Saya</h1>
-        <div class="col-lg-6 mx-auto">
-          <p class="lead mb-4">
-            Saya Wahyu Muharik, mahasiswa Universitas Raharja, jurusan Teknik
-            Informatika, memiliki ketertarikan dalam bidang programming.
-            Mempelajari ilmu programing semenjak sekolah serta memperdalam saat
-            berkuliah.
+    <main id="top">
+      <!-- Hero -->
+      <section class="hero container">
+        <div class="hero-text">
+          <p class="eyebrow intro">
+            <span class="status-dot" aria-hidden="true"></span>
+            Terbuka untuk peluang kerja
           </p>
-          <div class="d-grid gap-2 d-sm-flex justify-content-sm-center mb-5">
-            <a
-              href="file/CV.pdf"
-              target="_blank"
-              class="btn btn-secondary btn-lg px-4 me-sm-3"
-              >Resume</a
-            >
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- End About -->
+          <h1 class="hero-name intro">Wahyu Muharik</h1>
+          <p class="hero-role intro">
+            Staf Pajak <span aria-hidden="true">·</span> Mahasiswa S1 Teknik Informatika
+          </p>
 
-    <!-- Experience -->
-    <section id="experience">
-      <div class="container px-4 py-5">
-        <h2 data-aos="fade-right" class="pb-2">Pengalaman</h2>
-        <div
-          class="row justify-content-center g-1 py-3 row-cols-1 row-cols-lg-1 text-center"
-        >
-          <div data-aos="zoom-in" class="feature col">
-            <div class="align-items-center justify-content-center fs-2 mb-3">
-              <img
-                src="img/logo-airnav.png"
-                alt="AirNav Indonesia"
-                width="150"
-                height="150"
-              />
+          <div class="focus intro" role="group" aria-label="Tampilkan profil untuk posisi">
+            <span class="focus-label">Lihat profil untuk</span>
+            <div class="segmented">
+              <span class="segmented-thumb" aria-hidden="true"></span>
+              <button type="button" data-focus-btn="pajak" aria-pressed="true">Staf Pajak</button>
+              <button type="button" data-focus-btn="programmer" aria-pressed="false">Junior Programmer</button>
             </div>
-            <h3 class="fs-2 text-body-emphasis">AirNav Indonesia</h3>
-            <p class="lead">
-              Prakerin selama 2 bulan saat bersekolah, saya melakukan pekerjaan
-              Administrasi Perkantoran seperti menginput data ke Ms. Excel,
-              membuat laporan Alat Tulis Kantor menggunakan Ms. Word, serta
-              pekerjaan administrasi lainnya.
+          </div>
+
+          <div class="summary intro" aria-live="polite">
+            <p data-summary="pajak">
+              Staf Pajak di PT Duta Abadi Primantara dengan pengalaman 2 tahun, didahului
+              8 bulan magang di perusahaan yang sama. Menangani rekonsiliasi PPN Masukan,
+              ekualisasi serta rekonsiliasi utang PPh Pasal 21, 23, dan 4 ayat (2), dan
+              validasi transaksi pembelian ber-PPN. Terbiasa bekerja dengan Oracle
+              E-Business Suite, Coretax, dan DJP Online.
             </p>
-            <a
-              href="https://www.airnavindonesia.co.id/"
-              target="_blank"
-              class="icon-link"
-              >AirNav Indonesia</a
-            >
-          </div>
-        </div>
-        <div
-          class="row justify-content-center g-1 py-3 row-cols-1 row-cols-lg-1 text-center"
-        >
-          <div data-aos="zoom-in" class="feature col">
-            <div class="align-items-center justify-content-center fs-2 mb-3">
-              <img
-                src="img/logo-dap.png"
-                alt="AirNav Indonesia"
-                width="200"
-                height="150"
-              />
-            </div>
-            <h3 class="fs-2 text-body-emphasis">PT. Duta Abadi Primantara</h3>
-            <p class="lead">
-              Magang selama 6 bulan saat kuliah, saya melakukan pekerjaan
-              Admin Pajak (Tax Admin) seperti mengatur file - file mengenai perpajakan dari PPH 21, 23 & 4(2),
-              membuat laporan ekualisasi pajak menggunakan Ms. Excel, serta
-              pekerjaan pajak lainnya.
+            <p data-summary="programmer" hidden>
+              Mahasiswa S1 Teknik Informatika Universitas Raharja yang sedang menyelesaikan
+              skripsi, dengan dasar Rekayasa Perangkat Lunak sejak SMK. Menguasai dasar
+              HTML, CSS, JavaScript, dan PHP. Pengalaman memakai ERP Oracle E-Business Suite
+              di bagian pajak membantu saya memahami alur data dan kebutuhan pengguna di
+              sisi bisnis.
             </p>
-            <a
-              href="http://dap.id/"
-              target="_blank"
-              class="icon-link"
-              >PT. Duta Abadi Primantara</a
-            >
+          </div>
+
+          <div class="hero-actions intro">
+            <a class="btn btn-primary magnetic" href="file/CV.pdf" target="_blank" rel="noopener">
+              <i class="fa-solid fa-download"></i> Unduh CV
+            </a>
+            <a class="btn btn-ghost magnetic" href="#kontak">
+              Hubungi saya <i class="fa-solid fa-arrow-right"></i>
+            </a>
           </div>
         </div>
-      </div>
-    </section>
-    <!-- End Experience -->
 
-    <!-- Skill -->
-    <section id="skill">
-      <div class="container px-4 py-5" id="icon-grid">
-        <h2 data-aos="zoom-in" class="pb-2 text-center">Kemampuan</h2>
+        <figure class="hero-photo intro">
+          <picture>
+            <source srcset="img/wahyu-portrait.webp" type="image/webp" />
+            <img
+              src="img/wahyu-portrait.jpg"
+              alt="Foto Wahyu Muharik"
+              width="800"
+              height="1000"
+              fetchpriority="high"
+            />
+          </picture>
+          <figcaption>
+            <span><i class="fa-solid fa-location-dot"></i> Kota Tangerang, Banten</span>
+          </figcaption>
+        </figure>
+      </section>
 
-        <div
-          class="row justify-content-center row-cols-2 row-cols-sm-3 row-cols-md-2 row-cols-lg-6 g-4 py-5"
-        >
-          <div data-aos="zoom-in-right" class="col d-flex align-items-start">
-            <i
-              class="fa-brands fa-html5 fa-3x text-body-secondary flex-shrink-0 me-3"
-            ></i>
-            <div>
-              <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">HTML 5</h3>
-            </div>
+      <!-- Ringkasan cepat -->
+      <section class="container facts" aria-label="Ringkasan profil">
+        <dl class="facts-grid">
+          <div class="fact reveal">
+            <dt>Posisi saat ini</dt>
+            <dd>Staf Pajak<small>PT Duta Abadi Primantara</small></dd>
           </div>
-          <div data-aos="zoom-in" class="col d-flex align-items-start">
-            <i
-              class="fa-brands fa-css3 fa-3x text-body-secondary flex-shrink-0 me-3"
-            ></i>
-            <div>
-              <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">CSS 3</h3>
-            </div>
+          <div class="fact reveal">
+            <dt>Pengalaman pajak</dt>
+            <dd>2 tahun<small>+ 8 bulan magang</small></dd>
           </div>
-          <div data-aos="zoom-in-left" class="col d-flex align-items-start">
-            <i
-              class="fa-brands fa-microsoft fa-3x text-body-secondary flex-shrink-0 me-3"
-            ></i>
-            <div>
-              <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">
-                Microsoft Office
-              </h3>
-            </div>
+          <div class="fact reveal">
+            <dt>Pendidikan</dt>
+            <dd>S1 Teknik Informatika<small>Tahap skripsi · lulus 2027 (perkiraan)</small></dd>
           </div>
-          <div data-aos="zoom-in-left" class="col d-flex align-items-start">
-            <i
-              class="fa-brands fa-php fa-3x text-body-secondary flex-shrink-0 me-3"
-            ></i>
-            <div>
-              <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">
-                PHP
-              </h3>
-            </div>
+          <div class="fact reveal">
+            <dt>Domisili</dt>
+            <dd>Kota Tangerang<small>Banten</small></dd>
           </div>
+        </dl>
+      </section>
+
+      <!-- Pengalaman -->
+      <section id="pengalaman" class="container section">
+        <header class="section-head reveal">
+          <p class="section-index">01</p>
+          <h2>Pengalaman</h2>
+          <p class="section-note">Klik setiap tugas untuk melihat penjelasannya.</p>
+        </header>
+
+        <div class="timeline">
+          <span class="timeline-rail" aria-hidden="true"><span class="timeline-fill"></span></span>
+          <ol class="jobs">
+
+            <li class="job reveal">
+              <div class="job-logo"><img src="img/logo-dap.png" alt="" width="413" height="271" loading="lazy" /></div>
+              <div class="job-body card spotlight">
+                <div class="job-head">
+                  <div>
+                    <h3>Staf Pajak</h3>
+                    <p class="job-org">
+                      <a href="http://dap.id/" target="_blank" rel="noopener">PT Duta Abadi Primantara <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </p>
+                  </div>
+                  <p class="job-meta"><span class="badge badge-live">Saat ini</span> 2 tahun</p>
+                </div>
+                <ul class="duties">
+                  <li>
+                    <button type="button" class="duty" aria-expanded="false">
+                      Rekonsiliasi PPN Masukan <i class="fa-solid fa-plus"></i>
+                    </button>
+                    <div class="duty-detail">
+                      <p>Mencocokkan Faktur Pajak Masukan dengan pencatatan di pembukuan agar PPN Masukan yang dikreditkan sesuai.</p>
+                    </div>
+                  </li>
+                  <li>
+                    <button type="button" class="duty" aria-expanded="false">
+                      Ekualisasi PPh Pasal 21, 23, dan 4 ayat (2) <i class="fa-solid fa-plus"></i>
+                    </button>
+                    <div class="duty-detail">
+                      <p>Membandingkan objek pajak pada laporan keuangan dengan yang dilaporkan di SPT Masa untuk menemukan dan menjelaskan selisih.</p>
+                    </div>
+                  </li>
+                  <li>
+                    <button type="button" class="duty" aria-expanded="false">
+                      Rekonsiliasi utang PPh Pasal 21, 23, dan 4 ayat (2) <i class="fa-solid fa-plus"></i>
+                    </button>
+                    <div class="duty-detail">
+                      <p>Memastikan saldo utang PPh di buku besar sesuai dengan pajak yang dipotong dan disetor.</p>
+                    </div>
+                  </li>
+                  <li>
+                    <button type="button" class="duty" aria-expanded="false">
+                      Validasi transaksi pembelian yang dikenakan PPN <i class="fa-solid fa-plus"></i>
+                    </button>
+                    <div class="duty-detail">
+                      <p>Memeriksa kelengkapan dan kesesuaian faktur, DPP, serta tarif PPN pada transaksi pembelian sebelum dicatat.</p>
+                    </div>
+                  </li>
+                  <li>
+                    <button type="button" class="duty" aria-expanded="false">
+                      Filing dokumen perpajakan periode 2016 hingga sekarang <i class="fa-solid fa-plus"></i>
+                    </button>
+                    <div class="duty-detail">
+                      <p>Menata arsip dokumen perpajakan agar mudah ditelusuri saat dibutuhkan, termasuk untuk keperluan pemeriksaan.</p>
+                    </div>
+                  </li>
+                </ul>
+                <ul class="tags" aria-label="Topik">
+                  <li>PPN</li><li>PPh 21</li><li>PPh 23</li><li>PPh 4(2)</li>
+                </ul>
+              </div>
+            </li>
+
+            <li class="job reveal">
+              <div class="job-logo"><img src="img/logo-dap.png" alt="" width="413" height="271" loading="lazy" /></div>
+              <div class="job-body card spotlight">
+                <div class="job-head">
+                  <div>
+                    <h3>Magang Admin Pajak</h3>
+                    <p class="job-org">PT Duta Abadi Primantara</p>
+                  </div>
+                  <p class="job-meta">8 bulan</p>
+                </div>
+                <ul class="duties duties-plain">
+                  <li>Mengelola berkas perpajakan PPh Pasal 21, 23, dan 4 ayat (2).</li>
+                  <li>Menyusun laporan ekualisasi pajak menggunakan Microsoft Excel.</li>
+                  <li>Membantu pekerjaan administrasi pajak lainnya.</li>
+                </ul>
+              </div>
+            </li>
+
+            <li class="job reveal">
+              <div class="job-logo"><img src="img/logo-airnav.png" alt="" width="310" height="317" loading="lazy" /></div>
+              <div class="job-body card spotlight">
+                <div class="job-head">
+                  <div>
+                    <h3>Praktik Kerja Lapangan (PKL) · Administrasi Perkantoran</h3>
+                    <p class="job-org">
+                      <a href="https://www.airnavindonesia.co.id/" target="_blank" rel="noopener">AirNav Indonesia <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </p>
+                  </div>
+                  <p class="job-meta">2019 · 3 bulan</p>
+                </div>
+                <ul class="duties duties-plain">
+                  <li>Menginput data surat masuk dan surat keluar menggunakan Microsoft Excel.</li>
+                  <li>Membuat surat dinas, surat jalan, dan laporan alat tulis kantor menggunakan Microsoft Word.</li>
+                  <li>Membantu pekerjaan administrasi kantor lainnya.</li>
+                </ul>
+              </div>
+            </li>
+          </ol>
         </div>
-      </div>
-    </section>
-    <!-- End Skill -->
+      </section>
 
-    <!-- Footer -->
-    <div class="container">
-      <footer
-        class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top"
-      >
-        <div class="col-md-4 d-flex align-items-center">
-          <a
-            href="/"
-            class="mb-3 me-2 mb-md-0 text-body-secondary text-decoration-none lh-1"
-          >
-            <svg class="bi" width="30" height="24">
-              <use xlink:href="#bootstrap" />
-            </svg>
-          </a>
-          <span class="mb-3 mb-md-0 text-body-secondary"
-            >&copy; <script>document.write(new Date().getFullYear())</script> Wahyu Muharik</span
-          >
+      <!-- Keahlian -->
+      <section id="keahlian" class="container section">
+        <header class="section-head reveal">
+          <p class="section-index">02</p>
+          <h2>Keahlian</h2>
+          <p class="section-note">Kartu yang disorot menyesuaikan pilihan posisi di atas.</p>
+        </header>
+
+        <div class="skills">
+          <article class="skill card spotlight reveal" data-key="tax" data-for="pajak">
+            <i class="fa-solid fa-file-invoice-dollar skill-icon"></i>
+            <h3>Perpajakan</h3>
+            <ul class="tags">
+              <li>Rekonsiliasi PPN Masukan</li>
+              <li>Ekualisasi PPh</li>
+              <li>Rekonsiliasi utang PPh</li>
+              <li>Validasi transaksi ber-PPN</li>
+              <li>Filing dokumen pajak</li>
+            </ul>
+          </article>
+
+          <article class="skill card spotlight reveal" data-key="erp" data-for="pajak programmer">
+            <i class="fa-solid fa-server skill-icon"></i>
+            <h3>ERP</h3>
+            <ul class="tags"><li>Oracle E-Business Suite</li></ul>
+          </article>
+
+          <article class="skill card spotlight reveal" data-key="djp" data-for="pajak">
+            <i class="fa-solid fa-building-columns skill-icon"></i>
+            <h3>Aplikasi DJP</h3>
+            <ul class="tags"><li>Coretax</li><li>DJP Online</li><li>Aplikasi DJP lainnya</li></ul>
+          </article>
+
+          <article class="skill card spotlight reveal" data-key="office" data-for="pajak programmer">
+            <i class="fa-brands fa-microsoft skill-icon"></i>
+            <h3>Microsoft Office</h3>
+            <ul class="tags"><li>Excel</li><li>Word</li><li>PowerPoint</li></ul>
+          </article>
+
+          <article class="skill card spotlight reveal" data-key="code" data-for="programmer">
+            <i class="fa-solid fa-code skill-icon"></i>
+            <h3>Pemrograman <span class="level">Dasar</span></h3>
+            <ul class="tags tags-icon">
+              <li><i class="fa-brands fa-html5"></i> HTML</li>
+              <li><i class="fa-brands fa-css3-alt"></i> CSS</li>
+              <li><i class="fa-brands fa-js"></i> JavaScript</li>
+              <li><i class="fa-brands fa-php"></i> PHP</li>
+            </ul>
+            <p class="skill-note">
+              Situs ini saya buat sendiri —
+              <a href="https://github.com/wahyumuhariq/wahyumuhariq.github.io" target="_blank" rel="noopener">lihat kodenya di GitHub</a>.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <!-- Pendidikan -->
+      <section id="pendidikan" class="container section">
+        <header class="section-head reveal">
+          <p class="section-index">03</p>
+          <h2>Pendidikan</h2>
+        </header>
+
+        <div class="edu">
+          <article class="card spotlight reveal">
+            <i class="fa-solid fa-graduation-cap skill-icon"></i>
+            <p class="edu-period">Perkiraan lulus 2027</p>
+            <h3>Universitas Raharja</h3>
+            <p>S1 Teknik Informatika</p>
+            <p class="edu-status"><span class="badge badge-live">Tahap skripsi</span></p>
+          </article>
+          <article class="card spotlight reveal">
+            <i class="fa-solid fa-school skill-icon"></i>
+            <p class="edu-period">2017 – 2020</p>
+            <h3>SMK Negeri 4 Tangerang</h3>
+            <p>Rekayasa Perangkat Lunak</p>
+          </article>
+        </div>
+      </section>
+
+      <!-- Kontak -->
+      <section id="kontak" class="container section contact reveal">
+        <p class="section-index">04</p>
+        <h2>Mari berdiskusi</h2>
+        <p class="contact-lead">
+          Terbuka untuk posisi Staf Pajak maupun Junior Programmer. Silakan hubungi saya
+          lewat email, WhatsApp, atau LinkedIn.
+        </p>
+
+        <div class="contact-mail">
+          <a href="mailto:wahyumuharik@gmail.com" class="contact-address">wahyumuharik@gmail.com</a>
+          <button type="button" class="btn btn-ghost btn-sm copy-email" data-email="wahyumuharik@gmail.com">
+            <i class="fa-solid fa-copy"></i> <span>Salin</span>
+          </button>
         </div>
 
-        <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
-          <li class="ms-3">
-            <a
-              href="https://www.linkedin.com/in/wahyumuharik"
-              class="mb-3 me-2 mb-md-0 text-body-secondary text-decoration-none lh-1"
-              ><i class="fa-brands fa-linkedin-in fa-lg"></i
-            ></a>
+        <ul class="contact-links">
+          <li>
+            <a class="btn btn-ghost magnetic" href="https://wa.me/6281288947142" target="_blank" rel="noopener">
+              <i class="fa-brands fa-whatsapp"></i> +62 812-8894-7142
+            </a>
+          </li>
+          <li>
+            <a class="btn btn-ghost magnetic" href="https://www.linkedin.com/in/wahyumuharik" target="_blank" rel="noopener">
+              <i class="fa-brands fa-linkedin-in"></i> LinkedIn
+            </a>
+          </li>
+          <li>
+            <a class="btn btn-primary magnetic" href="file/CV.pdf" target="_blank" rel="noopener">
+              <i class="fa-solid fa-download"></i> Unduh CV
+            </a>
           </li>
         </ul>
-      </footer>
-    </div>
-    <!-- End Footer -->
+      </section>
+    </main>
 
-    <div class="loader"></div>
+    <footer class="container footer">
+      <p>&copy; <span data-year>2026</span> Wahyu Muharik</p>
+      <a href="#top" class="to-top"><i class="fa-solid fa-arrow-up"></i> Kembali ke atas</a>
+    </footer>
 
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
-      crossorigin="anonymous"
-    ></script>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
-
-    <script>
-      const rootElement = document.querySelector(":root");
-      function disableScroll() {
-        const scrollTop =
-          window.pageYOffset || document.documentElement.scrollTop;
-        const scrollLeft =
-          window.pageXOffset || document.documentElement.scrollLeft;
-
-        window.onscroll = function () {
-          window.scrollTo(scrollTop, scrollLeft);
-        };
-
-        rootElement.style.scrollBehavior = "auto";
-      }
-
-      function enableScroll() {
-        window.onscroll = function () {};
-        rootElement.style.scrollBehavior = "smooth";
-        localStorage.setItem("opened", "true");
-      }
-      if (!localStorage.getItem("opened")) {
-        disableScroll();
-      }
-    </script>
-
-    <script>
-      var textWrapper = document.querySelector(".halo");
-      textWrapper.innerHTML = textWrapper.textContent.replace(
-        /\S/g,
-        "<span class='letter'>$&</span>"
-      );
-
-      anime.timeline({ loop: false }).add({
-        targets: ".halo .letter",
-        scale: [4, 1],
-        opacity: [0, 1],
-        translateZ: 0,
-        easing: "easeOutExpo",
-        duration: 950,
-        delay: (el, i) => 70 * i,
-      });
-    </script>
-
-    <script>
-      var textWrapper2 = document.querySelector(".p .letters");
-      textWrapper2.innerHTML = textWrapper2.textContent.replace(
-        /([^\x00-\x80]|\w)/g,
-        "<span class='letter1'>$&</span>"
-      );
-      anime
-        .timeline({ loop: false })
-        .add({
-          targets: ".p .line",
-          scaleY: [0, 1],
-          opacity: [0.5, 1],
-          easing: "easeOutExpo",
-          duration: 700,
-        })
-        .add({
-          targets: ".p .line",
-          translateX: [
-            0,
-            document.querySelector(".p .letters").getBoundingClientRect()
-              .width + 10,
-          ],
-          easing: "easeOutExpo",
-          duration: 700,
-          delay: 100,
-        })
-        .add({
-          targets: ".p .letter1",
-          opacity: [0, 1],
-          easing: "easeOutExpo",
-          duration: 600,
-          offset: "-=775",
-          delay: (el, i) => 34 * (i + 1),
-        })
-
-        .add({
-          targets: ".p",
-        });
-    </script>
-
-    <script>
-      anime.timeline({ loop: false }).add({
-        targets: ".baca",
-        scale: [4, 1],
-        opacity: [0, 1],
-        translateZ: 0,
-        easing: "easeOutExpo",
-        duration: 950,
-        delay: (el, i) => 70 * i,
-      });
-    </script>
-
-    <script>
-      anime.timeline({ loop: false }).add({
-        targets: ".poto",
-        left: "240px",
-        backgroundColor: "#FFF",
-        borderRadius: ["0%", "50%"],
-        easing: "easeInOutQuad",
-      });
-    </script>
-
-    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-    <script>
-      AOS.init();
-    </script>
+    <div class="toast" role="status" aria-live="polite"></div>
   </body>
 </html>

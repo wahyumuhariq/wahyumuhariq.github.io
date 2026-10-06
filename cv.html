@@ -1,0 +1,223 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>CV Wahyu Muharik</title>
+    <meta name="robots" content="noindex" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600&family=IBM+Plex+Sans:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      @page {
+        size: A4;
+        margin: 16mm 16mm 14mm;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        color: #1b1a17;
+        background: #fff;
+        font: 400 10pt/1.5 "IBM Plex Sans", Arial, sans-serif;
+      }
+      main {
+        max-width: 178mm;
+        margin: 0 auto;
+      }
+      h1,
+      h2,
+      h3,
+      p,
+      ul {
+        margin: 0;
+      }
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+      header {
+        display: flex;
+        gap: 18px;
+        align-items: center;
+        padding-bottom: 14px;
+        border-bottom: 1.5px solid #1f5f4a;
+      }
+      header img {
+        width: 26mm;
+        height: 32mm;
+        object-fit: cover;
+        border-radius: 4px;
+      }
+      h1 {
+        font: 600 24pt/1.1 "Fraunces", Georgia, serif;
+      }
+      .role {
+        margin-top: 4px;
+        font-size: 11pt;
+        color: #1f5f4a;
+        font-weight: 500;
+      }
+      .contact {
+        margin-top: 8px;
+        color: #55524b;
+        font-size: 9pt;
+      }
+      .contact span + span::before {
+        content: " · ";
+      }
+      h2 {
+        margin: 16px 0 8px;
+        font-size: 9pt;
+        font-weight: 600;
+        text-transform: uppercase;
+        color: #1f5f4a;
+      }
+      .item + .item {
+        margin-top: 10px;
+      }
+      .item-head {
+        display: flex;
+        justify-content: space-between;
+        gap: 12px;
+      }
+      h3 {
+        font-size: 10.5pt;
+        font-weight: 600;
+      }
+      .meta {
+        color: #55524b;
+        white-space: nowrap;
+      }
+      .org {
+        color: #55524b;
+      }
+      ul {
+        margin-top: 4px;
+        padding-left: 16px;
+      }
+      li + li {
+        margin-top: 1px;
+      }
+      .skills {
+        display: grid;
+        grid-template-columns: 34mm 1fr;
+        row-gap: 3px;
+      }
+      .skills dt {
+        font-weight: 600;
+      }
+      .skills dd {
+        margin: 0;
+      }
+      dl {
+        margin: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <header>
+        <img src="img/wahyu-portrait.jpg" alt="Foto Wahyu Muharik" />
+        <div>
+          <h1>Wahyu Muharik</h1>
+          <p class="role">Staf Pajak · Mahasiswa S1 Teknik Informatika</p>
+          <p class="contact">
+            <span>Kota Tangerang, Banten</span><span>+62 812-8894-7142</span><span>wahyumuharik@gmail.com</span>
+          </p>
+          <p class="contact">
+            <span>linkedin.com/in/wahyumuharik</span><span>wahyumuhariq.github.io</span>
+          </p>
+        </div>
+      </header>
+
+      <section>
+        <h2>Profil</h2>
+        <p>
+          Staf Pajak di PT Duta Abadi Primantara dengan pengalaman 2 tahun, didahului 8 bulan magang
+          di perusahaan yang sama. Menangani rekonsiliasi PPN Masukan, ekualisasi serta rekonsiliasi
+          utang PPh Pasal 21, 23, dan 4 ayat (2), dan validasi transaksi pembelian ber-PPN. Sedang
+          menyelesaikan skripsi S1 Teknik Informatika dengan dasar pemrograman web (HTML, CSS,
+          JavaScript, PHP).
+        </p>
+      </section>
+
+      <section>
+        <h2>Pengalaman Kerja</h2>
+        <div class="item">
+          <div class="item-head">
+            <h3>Staf Pajak</h3>
+            <span class="meta">Saat ini · 2 tahun</span>
+          </div>
+          <p class="org">PT Duta Abadi Primantara</p>
+          <ul>
+            <li>Rekonsiliasi PPN Masukan.</li>
+            <li>Ekualisasi PPh Pasal 21, 23, dan 4 ayat (2).</li>
+            <li>Rekonsiliasi utang PPh Pasal 21, 23, dan 4 ayat (2).</li>
+            <li>Validasi transaksi pembelian yang dikenakan PPN.</li>
+            <li>Filing dokumen perpajakan periode 2016 hingga sekarang.</li>
+          </ul>
+        </div>
+        <div class="item">
+          <div class="item-head">
+            <h3>Magang Admin Pajak</h3>
+            <span class="meta">8 bulan</span>
+          </div>
+          <p class="org">PT Duta Abadi Primantara</p>
+          <ul>
+            <li>Mengelola berkas perpajakan PPh Pasal 21, 23, dan 4 ayat (2).</li>
+            <li>Menyusun laporan ekualisasi pajak menggunakan Microsoft Excel.</li>
+          </ul>
+        </div>
+        <div class="item">
+          <div class="item-head">
+            <h3>Praktik Kerja Lapangan (PKL) · Administrasi Perkantoran</h3>
+            <span class="meta">2019 · 3 bulan</span>
+          </div>
+          <p class="org">AirNav Indonesia</p>
+          <ul>
+            <li>Menginput data surat masuk dan surat keluar menggunakan Microsoft Excel.</li>
+            <li>Membuat surat dinas, surat jalan, dan laporan alat tulis kantor menggunakan Microsoft Word.</li>
+          </ul>
+        </div>
+      </section>
+
+      <section>
+        <h2>Pendidikan</h2>
+        <div class="item">
+          <div class="item-head">
+            <h3>Universitas Raharja — S1 Teknik Informatika</h3>
+            <span class="meta">Perkiraan lulus 2027</span>
+          </div>
+          <p class="org">Tahap skripsi</p>
+        </div>
+        <div class="item">
+          <div class="item-head">
+            <h3>SMK Negeri 4 Tangerang — Rekayasa Perangkat Lunak</h3>
+            <span class="meta">2017 – 2020</span>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2>Keahlian</h2>
+        <dl class="skills">
+          <dt>Perpajakan</dt>
+          <dd>PPN, PPh Pasal 21, 23, dan 4 ayat (2): rekonsiliasi, ekualisasi, validasi, filing</dd>
+          <dt>Aplikasi DJP</dt>
+          <dd>Coretax, DJP Online, dan aplikasi DJP lainnya</dd>
+          <dt>ERP</dt>
+          <dd>Oracle E-Business Suite</dd>
+          <dt>Microsoft Office</dt>
+          <dd>Excel, Word, PowerPoint</dd>
+          <dt>Pemrograman</dt>
+          <dd>HTML, CSS, JavaScript, PHP (dasar)</dd>
+        </dl>
+      </section>
+    </main>
+  </body>
+</html>
